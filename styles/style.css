@@ -1,29 +1,415 @@
+/* ==========================================
+   GOOGLE FONTS
+========================================== */
+/* Підключаються в <head> HTML */
+
+/* ==========================================
+   VARIABLES
+========================================== */
+
+:root {
+
+    /* Colors */
+    --color-bg: #111111;
+    --color-bg-secondary: #1c1c1c;
+
+    --color-primary: #c9a227;
+    --color-primary-hover: #e3bb35;
+
+    --color-text: #f5f5f5;
+    --color-text-secondary: #c8c8c8;
+
+    --color-accent: aquamarine;
+
+    /* Effects */
+    --shadow-card: 0 10px 30px rgba(201, 162, 39, 0.35);
+    --border-radius: 18px;
+}
+
+
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* ==========================================
+   GLOBAL
+========================================== */
+
 body {
-    background: linear-gradient(90deg, #3e6598 0%, #14141f 51%);
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text);
+    background: linear-gradient(135deg, #202e44 0%, #111111 100%);
+    line-height: 1.6;
 }
 
-.nav-link {
-    color: aquamarine;
+
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
 }
 
-.navbar-nav .nav-link.active {
-    color: ghostwhite;
+p {
+    color: var(--color-text-secondary);
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.navbar {
+    background: rgba(17, 17, 17, 0.95) !important;
+    backdrop-filter: blur(10px);
 }
 
 .navbar-brand img {
     width: 80px;
 }
 
-.navbar-toggler {
-    background-color: rgb(91, 122, 122);
+.nav-link {
+    color: var(--color-accent);
+    transition: .3s;
 }
 
-.card {
-    box-shadow: 1px 4px 27px 6px #f2df07;
+.nav-link:hover {
+    color: var(--color-primary);
 }
+
+.navbar-nav .nav-link.active {
+    color: white;
+}
+
+.navbar-toggler {
+    background-color: #555;
+}
+
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background: #1b1b1b;
+    box-shadow: var(--shadow-card);
+    transition: .35s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(201, 162, 39, .45);
+}
+
+.card-body {
+    background: #1b1b1b;
+}
+
+.card-title {
+    color: var(--color-text);
+}
+
+.card-text {
+    color: var(--color-text-secondary);
+}
+
+
+/* ==========================================
+   SIDEBAR
+========================================== */
 
 .sidebar {
     margin-top: 20px;
-    color: aquamarine;
-    background: linear-gradient(200deg, #3e6598 0%, #14141f 51%);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background: linear-gradient(180deg, #233a5d, #161616);
+}
+
+.sidebar p {
+    margin-bottom: 0;
+}
+
+.sidebar a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    color: var(--color-primary-hover);
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.btn-primary {
+    background: var(--color-primary);
+    border: none;
+    color: #111;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-hover);
+    color: #111;
+}
+.btn-gold{
+
+    display:inline-block;
+
+    padding:15px 35px;
+
+    background:var(--color-primary);
+
+    color:#111;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.35s;
+
+    box-shadow:0 8px 25px rgba(201,162,39,.35);
+
+}
+
+.btn-gold:hover{
+
+    background:var(--color-primary-hover);
+
+    color:#111;
+
+    transform:translateY(-3px);
+
+}
+
+.btn-outline{
+
+    display:inline-block;
+
+    padding:15px 35px;
+
+    border:2px solid var(--color-primary);
+
+    color:white;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+}
+
+.btn-outline:hover{
+
+    background:var(--color-primary);
+
+    color:#111;
+
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+    position: relative;
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("../images/hero-banner.jpg");
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            rgba(10,10,10,.82),
+            rgba(10,10,10,.82)
+        ),
+
+        linear-gradient(
+            120deg,
+            rgba(32,46,68,.65),
+            rgba(0,0,0,.15)
+        );
+}
+
+.hero .container{
+
+    position: relative;
+    z-index: 2;
+
+}
+
+.hero-content{
+
+    max-width:800px;
+
+    text-align:center;
+
+    margin:auto;
+
+}
+
+.hero h1{
+
+    font-size:4rem;
+
+    color:white;
+
+    letter-spacing:5px;
+
+    margin-bottom:25px;
+
+    text-shadow:0 0 25px rgba(201,162,39,.45);
+
+}
+
+.hero-subtitle{
+
+    font-size:1.6rem;
+
+    color:var(--color-primary);
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+}
+
+.hero-description{
+
+    font-size:1.1rem;
+
+    color:#dddddd;
+
+    line-height:1.9;
+
+    margin-bottom:45px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+/* Будемо створювати пізніше */
+
+
+/* ==========================================
+   MEDIA QUERIES
+========================================== */
+
+@media (max-width: 992px) {
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 2.3rem;
+    }
+
+}
+@media(max-width:992px){
+
+.hero{
+
+min-height:75vh;
+
+}
+
+.hero h1{
+
+font-size:3rem;
+
+}
+
+.hero-subtitle{
+
+font-size:1.25rem;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:2.3rem;
+
+letter-spacing:2px;
+
+}
+
+.hero-description{
+
+font-size:1rem;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
 }
